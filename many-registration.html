@@ -112,7 +112,7 @@ function recordResponseTiming(prefix, n) {
   function reportPercentile(percent) {
     results[prefix + '_' + percent + '_percentile'] = {
       value: percentile(percent),
-      units: 'msec'
+      units: 'ms'
     };
   }
 }
