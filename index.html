@@ -49,6 +49,7 @@ function timedRequest() {
   xhr.addEventListener('load', timedRequestCompleted, false);
   xhr.addEventListener('error', timedRequestFailed, false);
   xhr.addEventListener('abort', timedRequestFailed, false);
+  xhr.addEventListener('timeout', timedRequestFailed, false);
 
   xhr.startTime = performance.now();
   sendXhr(xhr);
