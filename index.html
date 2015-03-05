@@ -175,11 +175,11 @@ function setUpFrame(path) {
 function testRequestLatency(numConcurrentRequests) {
   return function(frame) {
     return new Promise(function(resolve, _) {
-      window.addEventListener('message', message);
+      window.addEventListener('message', onmessage);
 
-      function message(event) {
+      function onmessage(event) {
         if (event.data.what == 'done') {
-          window.removeEventListener('message', message);
+          window.removeEventListener('message', onmessage);
           addResults(event.data.results);
           resolve(frame);
         }
